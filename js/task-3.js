@@ -1,26 +1,28 @@
 "use strict";
 
-  class StringBuilder {
-    constructor(initialValue = '') {
-      this.value = initialValue;
-    }
+class StringBuilder {
+  #value;
 
-    getValue() {
-      return this.value;
-    }
-
-    padEnd(str) {
-      this.value += str;
-    }
-
-    padStart(str) {
-      this.value = str + this.value;
-    }
-
-    padBoth(str) {
-      this.value = str + this.value + str;
-    }
+  constructor(initialValue = '') {
+    this.#value = initialValue;
   }
+
+  getValue() {
+    return this.#value;
+  }
+
+  padEnd(str) {
+    this.#value += str;
+  }
+
+  padStart(str) {
+    this.#value = str + this.#value;
+  }
+
+  padBoth(str) {
+    this.#value = str + this.#value + str;
+  }
+}
 
   // Використання класу зазначене в завданні:
   const builder = new StringBuilder(".");
