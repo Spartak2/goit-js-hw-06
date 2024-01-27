@@ -1,17 +1,9 @@
-"use strict";
-
 const customer = {
   username: "Mango",
   balance: 24000,
   discount: 0.1,
   orders: ["Burger", "Pizza", "Salad"],
-
-  initialize(balance, discount, orders) {
-    this.balance = balance;
-    this.discount = discount;
-    this.orders = orders;
-  },
-
+  // Change code below this line
   getBalance() {
     return this.balance;
   },
@@ -25,17 +17,11 @@ const customer = {
     return this.orders;
   },
   addOrder(cost, order) {
-    const discountedCost = cost - cost * this.discount;
-    if (discountedCost > 0) {
-      this.balance -= discountedCost;
-      this.orders.push(order);
-    } else {
-      console.log("Order not added. Insufficient discounted cost.");
-    }
+    this.balance -= cost - cost * this.discount;
+    this.orders.push(order);
   },
+  // Change code above this line
 };
-
-customer.initialize(24000, 0.1, ["Burger", "Pizza", "Salad"]);
 
 customer.setDiscount(0.15);
 console.log(customer.getDiscount()); // 0.15
